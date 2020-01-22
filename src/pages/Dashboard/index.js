@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import PeopleService from '../../services/starWars/peopleService';
+import PeopleService from '../../services/api/peopleService';
 
-import Person from '../../components/Person'
+import Person from '../../components/Person';
+import People from '../../features/People';
 
 import './style.css';
 
@@ -13,37 +14,44 @@ export default function Dashboard() {
 
   return (
     <div>
-      <h1 className="title">Hello World Template!</h1>
+      <h1>template para projetos React Ecmascript</h1>
 
       <p>
-        API: {process.env.REACT_APP_API}
+        Consumindo API:
+        <b>{process.env.REACT_APP_API}</b>
+        {' '}
+        no ambiente do tipo:
+        <b>{process.env.NODE_ENV}</b>
       </p>
-      <br />
-      <b>
-        Environment: {process.env.NODE_ENV}
-      </b>
-      <br />
-      <b>Author: </b>
-      <a href={process.env.REACT_APP_AUTHOR_LINK} rel="author">
-        {process.env.REACT_APP_AUTHOR}
-      </a>
 
-      <hr />
+      <p>
+        Para contribuir com o
+        <a href={process.env.REACT_APP_TEMPALTE_LINK}>Template</a>
+        , acesse a
+        <a href={process.env.REACT_APP_TEMPALTE_DOCS}>Documentação</a>
+      </p>
 
-      <Person person={person | null} xablau="teste"/>
-      <hr />
+      <h3>Exemplo de componentes</h3>
+
+      <p>
+        Componente do tipo:
+        <b>Stateless Component</b>
+      </p>
+      <Person person={person} />
+
+      <p>
+        Componente do tipo:
+        <b>Feature Component</b>
+      </p>
+      <People />
     </div>
   );
 }
 
-function findPerson(setPerson) {
+function findPerson(setStatePerson) {
   PeopleService
     .find(1)
-    .then(response => {
-      // handle success
-      console.log(response);
-      return setPerson(response);
-    })
-    .catch(error => console.log(error))
+    .then((response) => setStatePerson(response.data))
+    .catch((error) => error)
     .finally(() => { });
 }

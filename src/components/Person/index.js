@@ -1,34 +1,46 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './style.css';
 
-export default function Person({person: {name, ...person}, ...props}) {
-
-  console.log('props :: ', props);
-  console.log('name :: ', name);
-
-  console.log('person :: ' , person);
-
-
-
+function Person(
+  {
+    person: {
+      id, email, firstName, lastName, avatar,
+    },
+  },
+) {
   return (
     <>
-
-    eaeaetrae
-    {/* {props.name} */}
-
-
+      <div>
+        {id}
+        {email}
+        {firstName}
+        {lastName}
+        {avatar}
+      </div>
     </>
   );
 }
 
+Person.propTypes = {
+  person: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    email: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    avatar: PropTypes.string,
+  }),
+};
 
+Person.defaultProps = {
+  person: {
+    id: 0,
+    email: '',
+    firstName: '',
+    lastName: '',
+    avatar: '',
+  },
+};
 
-
-
-
-
-
-
-
-
+export default Person;
