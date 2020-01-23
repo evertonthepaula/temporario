@@ -82,3 +82,11 @@ lint-stage
 json-server
 lint
 tests
+
+
+
+### Tipos de componentes
+
+#### Feature components
+
+É importante porque isola as responsabildiades evitando que componentes que tenham muitos filhos acabem implementando todas a logicas destes compoenentes.

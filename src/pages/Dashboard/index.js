@@ -4,6 +4,8 @@ import PeopleService from '../../services/api/peopleService';
 
 import Person from '../../components/Person';
 import People from '../../features/People';
+import Button from '../../styles/components/button';
+import Login from '../../features/forms/login';
 
 import './style.css';
 
@@ -44,6 +46,29 @@ export default function Dashboard() {
         <b>Feature Component</b>
       </p>
       <People />
+
+      <p>
+        Componente do tipo:
+        <b>Styled Component</b>
+      </p>
+      <Button>default</Button>
+      <Button className="green">teste</Button>
+      <Button className="orange">orange</Button>
+      <Button className="red">red</Button>
+      <Button className="blue">blue</Button>
+      <Button className="disabled">disabled</Button>
+
+      <Button color="green">teste</Button>
+      <Button color="orange">orange</Button>
+      <Button color="red">red</Button>
+      <Button color="blue">blue</Button>
+      <Button color="disabled">disabled</Button>
+
+      <p>
+        Componente do tipo:
+        <b>Feature Component</b>
+      </p>
+      <Login />
     </div>
   );
 }

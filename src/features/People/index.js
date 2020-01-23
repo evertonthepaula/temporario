@@ -16,7 +16,7 @@ function People({ title }) {
     <>
       <h4>{title}</h4>
 
-      {people.map((item) => <Person person={item} />)}
+      {people.map((item, key) => <Person key={`person${key}`} person={item} />)}
     </>
   );
 }
