@@ -1,5 +1,8 @@
 /* http://positivo.com.br/uploads/POSITIVO_Brandbook_shortvs.pdf */
 
+import { css } from 'styled-components';
+
+export default css`
 :root {
   --color-black: #000000;
   --color-dark-smoke: #555555;
@@ -81,3 +84,4 @@
   --text-color-second: var(--color-dark-smoke);
   --text-color-third: var(--color-smoke);
 }
+`;

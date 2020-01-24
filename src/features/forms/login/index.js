@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import PropTypes from 'prop-types';
 import Button from '../../../styles/components/button';
 
 function LoginForm({ dispatch }) {
@@ -31,5 +31,14 @@ function LoginForm({ dispatch }) {
     </>
   );
 }
+
+LoginForm.propTypes = {
+  dispatch: PropTypes.func,
+};
+
+LoginForm.defaultProps = {
+  dispatch: () => {},
+};
+
 
 export default connect()(LoginForm);

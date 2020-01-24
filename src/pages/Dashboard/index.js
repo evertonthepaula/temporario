@@ -7,7 +7,6 @@ import People from '../../features/People';
 import Button from '../../styles/components/button';
 import Login from '../../features/forms/login';
 
-import './style.css';
 
 export default function Dashboard() {
   const [person, setPerson] = useState();
@@ -15,8 +14,8 @@ export default function Dashboard() {
   useEffect(() => findPerson(setPerson), []);
 
   return (
-    <div>
-      <h1>template para projetos React Ecmascript</h1>
+    <>
+      <h1>template para projetos React</h1>
 
       <p>
         Consumindo API:
@@ -69,7 +68,7 @@ export default function Dashboard() {
         <b>Feature Component</b>
       </p>
       <Login />
-    </div>
+    </>
   );
 }
 

@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import Service from './service';
-
 import Person from '../../components/Person';
-
-import './style.css';
 
 function People({ title }) {
   const [people, setPeople] = useState([]);
@@ -16,7 +12,7 @@ function People({ title }) {
     <>
       <h4>{title}</h4>
 
-      {people.map((item, key) => <Person key={`person${key}`} person={item} />)}
+      {people.map((item) => <Person key={`${item.id}`} person={item} />)}
     </>
   );
 }

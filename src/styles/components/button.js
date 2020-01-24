@@ -56,17 +56,17 @@ const colors = {
   `,
 
   orange: css`
-color: var(--color-white);
-background-color: var(--color-orange);
-border-color: var(--color-orange);
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
 
-&:hover {
-  background-color: var(--color-orange-dark);
-  border-color: var(--color-orange-dark);
-}
-&:focus {
-  outline: solid 1px var(--color-blue-dark);
-}
+    &:hover {
+      background-color: var(--color-orange-dark);
+      border-color: var(--color-orange-dark);
+    }
+    &:focus {
+      outline: solid 1px var(--color-blue-dark);
+    }
 `,
 
   red: css`

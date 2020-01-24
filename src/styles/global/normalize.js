@@ -1,7 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
-import './settings.css';
+import { css } from 'styled-components';
 
-export default createGlobalStyle`
+export default css`
 *,
 *::before,
 *::after {
@@ -113,4 +112,8 @@ progress {vertical-align: baseline;}
   font: inherit;
 }
 summary {display: list-item;}
+img {
+  max-width: 100%;
+  height: auto;
+}
 `;
