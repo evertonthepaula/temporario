@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Person(
-  {
-    person: {
-      id, email, firstName, lastName, avatar,
-    },
-  },
-) {
+function Person({ person: { id, email, firstName, lastName, avatar } }) {
   return (
     <>
       <div>
@@ -27,8 +21,8 @@ Person.propTypes = {
     email: PropTypes.string,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
-    avatar: PropTypes.string,
-  }),
+    avatar: PropTypes.string
+  })
 };
 
 Person.defaultProps = {
@@ -37,8 +31,8 @@ Person.defaultProps = {
     email: '',
     firstName: '',
     lastName: '',
-    avatar: '',
-  },
+    avatar: ''
+  }
 };
 
 export default Person;

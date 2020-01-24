@@ -6,13 +6,13 @@ import Button from '../../../styles/components/button';
 function LoginForm({ dispatch }) {
   function login() {
     dispatch({
-      type: 'LOGIN_SUCCESS',
+      type: 'LOGIN_SUCCESS'
     });
   }
 
   function logout() {
     dispatch({
-      type: 'LOGOUT',
+      type: 'LOGOUT'
     });
   }
 
@@ -25,20 +25,23 @@ function LoginForm({ dispatch }) {
         <label htmlFor="senha">login</label>
         <input type="text" id="senha" />
 
-        <Button type="submmit" color="green" onClick={() => login()}>login</Button>
-        <Button type="submmit" className="red" onClick={() => logout()}>logout</Button>
+        <Button type="submmit" color="green" onClick={() => login()}>
+          login
+        </Button>
+        <Button type="submmit" className="red" onClick={() => logout()}>
+          logout
+        </Button>
       </form>
     </>
   );
 }
 
 LoginForm.propTypes = {
-  dispatch: PropTypes.func,
+  dispatch: PropTypes.func
 };
 
 LoginForm.defaultProps = {
-  dispatch: () => {},
+  dispatch: () => {}
 };
-
 
 export default connect()(LoginForm);

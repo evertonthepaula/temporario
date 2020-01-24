@@ -12,17 +12,19 @@ function People({ title }) {
     <>
       <h4>{title}</h4>
 
-      {people.map((item) => <Person key={`${item.id}`} person={item} />)}
+      {people.map(item => (
+        <Person key={`${item.id}`} person={item} />
+      ))}
     </>
   );
 }
 
 People.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 People.defaultProps = {
-  title: 'lista de pessoas',
+  title: 'lista de pessoas'
 };
 
 export default People;

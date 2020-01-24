@@ -67,7 +67,7 @@ const colors = {
     &:focus {
       outline: solid 1px var(--color-blue-dark);
     }
-`,
+  `,
 
   red: css`
     color: var(--color-white);
@@ -88,23 +88,23 @@ const colors = {
     background-color: var(--color-snow);
     border-color: var(--color-dark-snow);
     cursor: not-allowed;
-    opacity: .4;
+    opacity: 0.4;
 
     &:hover {
       color: var(--color-smoke);
       background-color: var(--color-snow);
       border-color: var(--color-dark-snow);
       cursor: not-allowed;
-      opacity: .4;
+      opacity: 0.4;
     }
     &:focus {
       outline: solid 1px var(--color-blue-dark);
     }
-  `,
+  `
 };
 
 const Button = styled.button.attrs({
-  type: 'button',
+  type: 'button'
 })`
   display: inline-flex;
   align-items: center;
@@ -112,7 +112,7 @@ const Button = styled.button.attrs({
   margin: 0 4px;
   min-height: 32px;
   font-size: 1.4rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: 'PT Sans', sans-serif;
   text-decoration: none;
   border-style: solid;
   border-width: 1px;
@@ -120,7 +120,7 @@ const Button = styled.button.attrs({
   cursor: pointer;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
-  &.white{
+  &.white {
     color: var(--color-smoke);
     background-color: var(--color-white);
     border: 1px solid var(--color-dark-snow);
@@ -133,7 +133,7 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.blue{
+  &.blue {
     color: var(--color-white);
     background-color: var(--color-blue);
     border-color: var(--color-blue);
@@ -147,7 +147,7 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.green{
+  &.green {
     color: var(--color-white);
     background-color: var(--color-green);
     border-color: var(--color-green);
@@ -161,7 +161,7 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.orange{
+  &.orange {
     color: var(--color-dark-snow);
     background-color: var(--color-orange);
     border-color: var(--color-orange);
@@ -175,7 +175,7 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.red{
+  &.red {
     color: var(--color-dark-snow);
     background-color: var(--color-red);
     border-color: var(--color-red);
@@ -189,26 +189,26 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.disabled{
+  &.disabled {
     color: var(--color-smoke);
     background-color: var(--color-snow);
     border-color: var(--color-dark-snow);
     cursor: not-allowed;
-    opacity: .4;
+    opacity: 0.4;
 
     &:hover {
       color: var(--color-smoke);
       background-color: var(--color-snow);
       border-color: var(--color-dark-snow);
       cursor: not-allowed;
-      opacity: .4;
+      opacity: 0.4;
     }
     &:focus {
       outline: solid 1px var(--color-blue-dark);
     }
   }
 
-  ${(props) => colors[props.color || 'default']}
+  ${props => colors[props.color || 'default']}
 `;
 
 export default Button;

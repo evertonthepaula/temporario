@@ -1,13 +1,12 @@
 import PeopleService from '../../services/api/peopleService';
 
 function getPeople(setState) {
-  PeopleService
-    .get({ page: 1, qtd: 3 })
-    .then((response) => setState(response.data))
+  PeopleService.get({ page: 1, qtd: 3 })
+    .then(response => setState(response.data))
     .catch(() => setState([]))
-    .finally(() => { });
+    .finally(() => {});
 }
 
 export default {
-  getPeople,
+  getPeople
 };

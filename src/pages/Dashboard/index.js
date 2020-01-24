@@ -7,7 +7,6 @@ import People from '../../features/People';
 import Button from '../../styles/components/button';
 import Login from '../../features/forms/login';
 
-
 export default function Dashboard() {
   const [person, setPerson] = useState();
 
@@ -19,16 +18,13 @@ export default function Dashboard() {
 
       <p>
         Consumindo API:
-        <b>{process.env.REACT_APP_API}</b>
-        {' '}
-        no ambiente do tipo:
+        <b>{process.env.REACT_APP_API}</b> no ambiente do tipo:
         <b>{process.env.NODE_ENV}</b>
       </p>
 
       <p>
         Para contribuir com o
-        <a href={process.env.REACT_APP_TEMPALTE_LINK}>Template</a>
-        , acesse a
+        <a href={process.env.REACT_APP_TEMPALTE_LINK}>Template</a>, acesse a
         <a href={process.env.REACT_APP_TEMPALTE_DOCS}>Documentação</a>
       </p>
 
@@ -73,9 +69,8 @@ export default function Dashboard() {
 }
 
 function findPerson(setStatePerson) {
-  PeopleService
-    .find(1)
-    .then((response) => setStatePerson(response.data))
-    .catch((error) => error)
-    .finally(() => { });
+  PeopleService.find(1)
+    .then(response => setStatePerson(response.data))
+    .catch(error => error)
+    .finally(() => {});
 }

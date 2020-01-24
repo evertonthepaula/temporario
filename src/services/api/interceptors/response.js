@@ -12,5 +12,5 @@ function error(errorRes) {
 
 export default {
   response,
-  error,
+  error
 };

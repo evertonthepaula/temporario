@@ -10,5 +10,5 @@ function find(id) {
 
 export default {
   get,
-  find,
+  find
 };
