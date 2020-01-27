@@ -1,8 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Template Docs
+
+O objetivo inicial deste projeto é gerar um template geral para iniciar novos projetos React.js .
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run api:fake`
+
+Roda a uma Api para disponibilizar um "mock de dados" na porta 3004.
+
+### `npm run lint`
+
+Roda o linter de linter do javacript
+
+### `npm run lint:fix`
+
+Tenta fixar os erros apresentados pelo Linter do Javascript e mostra os erros que não conseguiu corrigir.
 
 ### `npm start`
 
@@ -27,15 +43,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## GIT e Testes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `git commit`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Por padrão sempre que for solicitado um commit o Linter irá executar o linter e tentar corrigir os erros, caso ele consiga corrigir todos os erros as alterações serão adicionadas ao commit atual, não sendo necessário escrever um novo commit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `git push`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Sempre que um Push for solicitado os o Jest tentará encontrar se os arquivos modificados estão relacionados a algum teste e então tentarão rodar os mesmos, caso contrário nenhum teste será necessário.
+
+## Tipos de componentes
+
+### Stateless Components
+
+São componentes de apresentação que não possuem manipulação de Estado interno, recebem apenas "props" como parametros e apresentam o template.
+
+[melhor explicado aqui](https://devpleno.com/stateless-functional-component/)
+
+### Stateful components
+
+Possuem lógica de manipulação de estado autocontido, não dependendo exclusivamente do componente pai para manipular seu estado.
+
+### Feature Components
+
+Feature components são como "Stateful components" A grande diferença neste modelo é que estes componentes devem consumir um serviço próprio. Este tipo de componente é importante porque isola as responsabilidades, extraindo a lógica de manipulação de Estado do componente pai para dentro dele mesmo.
+
+### Page components
+
+Estes componentes são os únicos que podem ser carregados pelas Rotas e são responsáveis por carregar e apresentar outros componentes. Esperasse que pages tenham pouca ou nenhuma lógica atribuida.
+
+
 
 ## Learn More
 
@@ -66,27 +104,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-
-## Template Docs
-
-### `api:fake`
-
-### `npm run lint`
-
-### `npm run lint:fix`
-
-.env
-husky
-lint-stage
-json-server
-lint
-tests
-
-
-
-### Tipos de componentes
-
-#### Feature components
-
-É importante porque isola as responsabildiades evitando que componentes que tenham muitos filhos acabem implementando todas a logicas destes compoenentes.

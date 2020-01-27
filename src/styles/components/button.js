@@ -81,25 +81,6 @@ const colors = {
     &:focus {
       outline: solid 1px var(--color-blue-dark);
     }
-  `,
-
-  disabled: css`
-    color: var(--color-smoke);
-    background-color: var(--color-snow);
-    border-color: var(--color-dark-snow);
-    cursor: not-allowed;
-    opacity: 0.4;
-
-    &:hover {
-      color: var(--color-smoke);
-      background-color: var(--color-snow);
-      border-color: var(--color-dark-snow);
-      cursor: not-allowed;
-      opacity: 0.4;
-    }
-    &:focus {
-      outline: solid 1px var(--color-blue-dark);
-    }
   `
 };
 
@@ -189,7 +170,7 @@ const Button = styled.button.attrs({
     }
   }
 
-  &.disabled {
+  &[disabled] {
     color: var(--color-smoke);
     background-color: var(--color-snow);
     border-color: var(--color-dark-snow);

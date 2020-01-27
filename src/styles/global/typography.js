@@ -9,6 +9,7 @@ export default css`
   body {
     font-size: 100%;
     font-family: var(--text-family);
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,

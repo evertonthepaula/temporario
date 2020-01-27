@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { FaReact } from 'react-icons/fa';
+
 function Person({ person: { id, email, firstName, lastName, avatar } }) {
   return (
     <>
       <div>
+        <FaReact />
         {id}
         {email}
         {firstName}
