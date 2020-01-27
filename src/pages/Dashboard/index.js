@@ -5,6 +5,7 @@ import PeopleService from '../../services/api/peopleService';
 import Person from '../../components/Person';
 import People from '../../features/People';
 import Button from '../../styles/components/button';
+import Video from '../../components/Video/player';
 
 export default function Dashboard() {
   const [person, setPerson] = useState();
@@ -14,6 +15,8 @@ export default function Dashboard() {
   return (
     <>
       <h1>Template para projetos React</h1>
+
+      <Video />
 
       <h4>Apis disponíveis:</h4>
       <ul>
