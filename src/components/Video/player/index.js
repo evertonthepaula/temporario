@@ -1,29 +1,35 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, lazy, Suspense } from 'react';
+import { Video, Controls, Btn, InputRange, CurrentSpeed } from './styles';
+
+const SpeedOptions = lazy(() => import('./components/SpeedOptions'));
 
 export default function Player() {
   const videEl = useRef(null);
   const [duration, setDuration] = useState(0);
-  const [currentTime, setCurentTime] = useState();
+  const [currentTime, setCurentTime] = useState(0);
+  const [currentVolume, setCurentVolume] = useState(0);
+  const [currentSpeed, setCurrentSpeed] = useState(1);
 
-  function initTimeline() {
-    setDuration(videEl.current.duration);
-  }
-
-  function changeTimeline(e) {
-    videEl.current.currentTime = e.target.value;
-  }
-
-  function timeUpdate() {
-    setCurentTime(videEl.current.currentTime);
-  }
-
-  function handleClick(e) {
+  function handleClickVideo(e) {
     stopEvents(e);
     tooglePlay();
   }
 
   function handleContextMenu(e) {
     stopEvents(e);
+  }
+
+  function canPlay() {
+    setCurentVolume(videEl.current.volume * 100);
+    setDuration(videEl.current.duration);
+  }
+
+  function timeUpdate() {
+    setCurentTime(videEl.current.currentTime);
+  }
+
+  function changeTimeline(e) {
+    videEl.current.currentTime = e.target.value;
   }
 
   function stopEvents(e) {
@@ -54,6 +60,7 @@ export default function Player() {
 
   function changeAudio(e) {
     volume(e.target.value / 100);
+    setCurentVolume(e.target.value);
   }
 
   function volume(vol) {
@@ -62,86 +69,51 @@ export default function Player() {
 
   function speed(val = 1) {
     videEl.current.playbackRate = val;
+    setCurrentSpeed(val);
   }
 
   return (
     <>
-      <video
-        controls
-        width="300"
+      <Video
         ref={videEl}
-        preload="auto"
-        onClick={handleClick}
-        controlsList="nodownload"
+        onClick={handleClickVideo}
         onContextMenu={handleContextMenu}
-        onCanPlay={initTimeline}
+        onCanPlay={canPlay}
         onTimeUpdate={timeUpdate}
-        src={`${process.env.PUBLIC_URL}videos/ramay.mp4`}
+        src={`${process.env.PUBLIC_URL}videos/introducao-react.webm`}
       >
-        <track src="" kind="captions" srcLang="en" label="english_captions" />
-      </video>
-      <button type="button" onClick={handleClick}>
-        play/pause
-      </button>
-      <button type="button" onClick={refresh}>
-        refresh
-      </button>
-      <button type="button" onClick={mute}>
-        mute
-      </button>
-      <br />
-      audio
-      <input type="range" min="0" max="100" onChange={changeAudio} />
-      <br />
-      timeline
-      <input
-        type="range"
+        <track src="" kind="captions" srcLang="pt" label="legendas" />
+      </Video>
+
+      <InputRange
         min="0"
         max={duration}
         value={currentTime}
         onChange={changeTimeline}
       />
-      <br />
-      <label htmlFor="speed1">1x</label>
-      <input
-        type="radio"
-        value="1"
-        id="speed1"
-        name="speed"
-        onChange={() => speed(1)}
-      />
-      <label htmlFor="speed15">1.5x</label>
-      <input
-        type="radio"
-        value="1.5"
-        id="speed15"
-        name="speed"
-        onChange={() => speed(1.5)}
-      />
-      <label htmlFor="speed2">2x</label>
-      <input
-        type="radio"
-        value="2"
-        id="speed2"
-        name="speed"
-        onChange={() => speed(2)}
-      />
-      <label htmlFor="speed25">2.5x</label>
-      <input
-        type="radio"
-        value="2.5"
-        id="speed2.5"
-        name="speed"
-        onChange={() => speed(2.5)}
-      />
-      <label htmlFor="speed3">3x</label>
-      <input
-        type="radio"
-        value="3"
-        id="speed3"
-        name="speed"
-        onChange={() => speed(3)}
-      />
+
+      <Controls>
+        <Btn onClick={tooglePlay}>play</Btn>
+
+        <Btn onClick={refresh}>refresh</Btn>
+
+        <Btn onClick={mute}>mute</Btn>
+
+        <CurrentSpeed>
+          {currentSpeed} x
+          <Suspense fallback="">
+            <SpeedOptions oncChangeSpeed={speed} currentValue={currentSpeed} />
+          </Suspense>
+        </CurrentSpeed>
+
+        <InputRange
+          label="Audio"
+          min="0"
+          max="100"
+          value={currentVolume}
+          onChange={changeAudio}
+        />
+      </Controls>
     </>
   );
 }

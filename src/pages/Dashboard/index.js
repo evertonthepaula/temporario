@@ -16,8 +16,6 @@ export default function Dashboard() {
     <>
       <h1>Template para projetos React</h1>
 
-      <Video />
-
       <h4>Apis disponíveis:</h4>
       <ul>
         <li>{process.env.REACT_APP_API}</li>
@@ -38,6 +36,12 @@ export default function Dashboard() {
         <b>Stateless Component</b>
       </p>
       <Person person={person} />
+
+      <p>
+        Componente do tipo:
+        <b>Stateful Component</b>
+      </p>
+      <Video />
 
       <p>
         Componente do tipo:

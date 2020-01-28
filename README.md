@@ -57,7 +57,7 @@ Sempre que um Push for solicitado os o Jest tentará encontrar se os arquivos mo
 
 ### Stateless Components
 
-São componentes de apresentação que não possuem manipulação de Estado interno, recebem apenas "props" como parametros e apresentam o template.
+São componentes de apresentação que não possuem manipulação de Estado interno, recebem apenas "props" como parametros e apresentam o template. Preferencialmente deve-se utilizar [React.memo](https://pt-br.reactjs.org/docs/react-api.html#reactmemo) nestes componentes para evitar renderizações desnecessárias.
 
 [melhor explicado aqui](https://devpleno.com/stateless-functional-component/)
 

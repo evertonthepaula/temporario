@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { FaReact } from 'react-icons/fa';
@@ -38,4 +38,4 @@ Person.defaultProps = {
   }
 };
 
-export default Person;
+export default memo(Person);
