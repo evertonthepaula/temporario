@@ -41,7 +41,7 @@ export default function Dashboard() {
         Componente do tipo:
         <b>Stateful Component</b>
       </p>
-      <Video />
+      <Video src={`${process.env.PUBLIC_URL}videos/introducao-react.webm`} />
 
       <p>
         Componente do tipo:

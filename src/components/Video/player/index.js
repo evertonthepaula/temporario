@@ -1,9 +1,10 @@
 import React, { useState, useRef, lazy, Suspense } from 'react';
+import PropTypes from 'prop-types';
 import { Video, Controls, Btn, InputRange, CurrentSpeed } from './styles';
 
 const SpeedOptions = lazy(() => import('./components/SpeedOptions'));
 
-export default function Player() {
+function Player({ src }) {
   const videEl = useRef(null);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurentTime] = useState(0);
@@ -80,7 +81,7 @@ export default function Player() {
         onContextMenu={handleContextMenu}
         onCanPlay={canPlay}
         onTimeUpdate={timeUpdate}
-        src={`${process.env.PUBLIC_URL}videos/introducao-react.webm`}
+        src={src}
       >
         <track src="" kind="captions" srcLang="pt" label="legendas" />
       </Video>
@@ -117,3 +118,9 @@ export default function Player() {
     </>
   );
 }
+
+Player.propTypes = {
+  src: PropTypes.string.isRequired
+};
+
+export default Player;
