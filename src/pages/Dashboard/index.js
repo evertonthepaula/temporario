@@ -70,7 +70,7 @@ export default function Dashboard() {
 }
 
 function findPerson(setStatePerson) {
-  PeopleService.find(1)
+  PeopleService.find(4)
     .then(response => setStatePerson(response.data))
     .catch(error => error)
     .finally(() => {});

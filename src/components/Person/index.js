@@ -1,19 +1,24 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
-
 import { FaReact } from 'react-icons/fa';
+import { Card, CardInfo, CardImage, Info } from './styles';
 
-function Person({ person: { id, email, firstName, lastName, avatar } }) {
+function Person({ person: { id, email, first_name, last_name, avatar } }) {
   return (
     <>
-      <div>
-        <FaReact />
-        {id}
-        {email}
-        {firstName}
-        {lastName}
-        {avatar}
-      </div>
+      <Card>
+        <CardImage>
+          <img src={avatar} alt={first_name} />
+        </CardImage>
+
+        <CardInfo>
+          <FaReact />
+          <Info>{id}</Info>
+          <Info>{email}</Info>
+          <Info>{first_name}</Info>
+          <Info>{last_name}</Info>
+        </CardInfo>
+      </Card>
     </>
   );
 }
@@ -22,8 +27,8 @@ Person.propTypes = {
   person: PropTypes.shape({
     id: PropTypes.number.isRequired,
     email: PropTypes.string,
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
     avatar: PropTypes.string
   })
 };
@@ -32,8 +37,8 @@ Person.defaultProps = {
   person: {
     id: 0,
     email: '',
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     avatar: ''
   }
 };
