@@ -43,7 +43,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## GIT e Testes
+### `npm run sonar` ou `npm run sonar:win`
+
+Roda o sonarQube para plataforma windows.
+
+## GIT
 
 ### `git commit`
 
@@ -52,6 +56,43 @@ Por padrão sempre que for solicitado um commit o Linter irá executar o linter 
 ### `git push`
 
 Sempre que um Push for solicitado os o Jest tentará encontrar se os arquivos modificados estão relacionados a algum teste e então tentarão rodar os mesmos, caso contrário nenhum teste será necessário.
+
+## Qualidade de Código
+
+### Linter
+
+### Testes unitários
+
+### SonarQube
+
+SonarQube irá rodar em [localhost:9999](localhost:9999);
+
+**Login**: admin
+**Login**: bitnami
+
+#### Instalando
+
+Para baixar manualmente acesse e execute os comandos o passo a passo no Medium [Análise de código com SonarQube + Docker + .NET Core.](https://slack-redir.net/link?url=https%3A%2F%2Fmedium.com%2F%40thiagoloureiro%2Fan%25C3%25A1lise-de-c%25C3%25B3digo-com-sonarqube-docker-net-core-aad17147486a)
+
+##### Docker local
+
+Você pode tentar rodar a configuração do Docker que está junto ao projeto,
+
+`docker-compose -f .\docker\compose\docker-compose.yml up -d`
+
+**Obs** : Será necessário modificar o docker-compose para compartilhar os volumes locais da instalação do sonarscanner.
+
+##### Configurando
+
+Você precisará configurar o [sonarscanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/). Baixe o pacote descompacte e configure a variável de ambiente "PATH" para apontar para o executável ".bin" do pacote.
+
+Agora acesse [localhost:9999](localhost:9999) para concluir a configuração.
+
+##### Executando
+
+Você deve primeiramente adicionar sua chave de login(Token) e projectKey nos arquivos sonar.bat e sonar.sh;
+
+Para executar SonarQube execute `npm run sonar`(bash) ou `npm run sonar:win`(win terminal).
 
 ## Tipos de componentes
 
@@ -67,13 +108,11 @@ Possuem lógica de manipulação de estado autocontido, não dependendo exclusiv
 
 ### Feature Components
 
-Feature components são como "Stateful components" A grande diferença neste modelo é que estes componentes devem consumir um serviço próprio. Este tipo de componente é importante porque isola as responsabilidades, extraindo a lógica de manipulação de Estado do componente pai para dentro dele mesmo.
+Feature components são como "Stateful components" A grande diferença neste modelo é que estes componentes devem consumir um serviço próprio e escopo fechado não dependendo do seu wrapper para definir seu estado, e também não [elevando o estado](https://pt-br.reactjs.org/docs/lifting-state-up.html) para o componente pai. Este tipo de componente é importante porque isola as responsabilidades, extraindo a lógica de manipulação de Estado do componente pai para dentro dele mesmo.
 
 ### Page components
 
 Estes componentes são os únicos que podem ser carregados pelas Rotas e são responsáveis por carregar e apresentar outros componentes. Esperasse que pages tenham pouca ou nenhuma lógica atribuida.
-
-
 
 ## Learn More
 
