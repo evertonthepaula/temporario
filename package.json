@@ -25,7 +25,9 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{js,jsx}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx}",
-    "api:fake": "json-server db.json --static ./fake-api --port 3004"
+    "api:fake": "json-server db.json --static ./fake-api --port 3004",
+    "sonar": "bash ./sonar.sh",
+    "sonar:win": "bash ./sonar.bat"
   },
   "eslintConfig": {
     "extends": "react-app"
