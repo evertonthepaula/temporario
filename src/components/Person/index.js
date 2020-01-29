@@ -1,23 +1,23 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { FaReact } from 'react-icons/fa';
-import { Card, CardInfo, CardImage, Info } from './styles';
+import { Info } from './styles';
+import { Card, Image } from 'react-bootstrap'
 
 function Person({ person: { id, email, first_name, last_name, avatar } }) {
   return (
     <>
-      <Card>
-        <CardImage>
-          <img src={avatar} alt={first_name} />
-        </CardImage>
+      <Card border="primary" style={{ width: '18rem' }}>
+        <Card.Header> {first_name} {last_name} </Card.Header>
 
-        <CardInfo>
-          <FaReact />
-          <Info>{id}</Info>
-          <Info>{email}</Info>
-          <Info>{first_name}</Info>
-          <Info>{last_name}</Info>
-        </CardInfo>
+        <Card.Body>
+          <Image src={avatar} roundedCircle />
+          <Card.Title><FaReact /> {first_name} {last_name} </Card.Title>
+          <Card.Text>
+            <Info>{id}</Info>
+            <Info>{email}</Info>
+          </Card.Text>
+        </Card.Body>
       </Card>
     </>
   );
