@@ -33,7 +33,7 @@ export const CardInfo = styled.div`
   font-size: 3rem;
 `;
 
-export const Info = styled.p`
+export const Info = styled.span`
   margin: 0;
   color: var(--color-dark-smoke);
   font-size: 1.4rem;

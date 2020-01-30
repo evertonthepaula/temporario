@@ -2,9 +2,14 @@
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Template Docs 
+## Template Docs
 
 O objetivo inicial deste projeto é gerar um template geral para iniciar novos projetos React.js .
+
+## O que falta Configurar
+
+- Redux/Sagas
+- Jest
 
 ## Available Scripts
 

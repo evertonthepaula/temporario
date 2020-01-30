@@ -27,6 +27,14 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "tron"
+        ]
+      }
+    ],
     "react/jsx-filename-extension": [
       "error",
       {

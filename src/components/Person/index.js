@@ -1,18 +1,23 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { FaReact } from 'react-icons/fa';
+import { Card, Image } from 'react-bootstrap';
 import { Info } from './styles';
-import { Card, Image } from 'react-bootstrap'
 
 function Person({ person: { id, email, first_name, last_name, avatar } }) {
   return (
     <>
       <Card border="primary" style={{ width: '18rem' }}>
-        <Card.Header> {first_name} {last_name} </Card.Header>
+        <Card.Header>
+          {' '}
+          {first_name} {last_name}{' '}
+        </Card.Header>
 
         <Card.Body>
           <Image src={avatar} roundedCircle />
-          <Card.Title><FaReact /> {first_name} {last_name} </Card.Title>
+          <Card.Title>
+            <FaReact /> {first_name} {last_name}{' '}
+          </Card.Title>
           <Card.Text>
             <Info>{id}</Info>
             <Info>{email}</Info>
