@@ -1,14 +1,15 @@
 import { css } from 'styled-components';
 
 export default css`
+  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
   html {
     font-size: 62.5%;
-    font-family: var(--text-family);
   }
 
   body {
     font-size: 100%;
-    font-family: var(--text-family);
+    font-family: 'Nunito Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -19,7 +20,6 @@ export default css`
     overflow: hidden;
     color: var(--title-color-primary);
     font-size: var(--font-Xlarge);
-    font-family: var(--title-family);
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -33,7 +33,6 @@ export default css`
     color: var(--title-color-primary);
     font-weight: bold;
     font-size: var(--font-large);
-    font-family: var(--title-family);
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -46,7 +45,6 @@ export default css`
     overflow: hidden;
     color: var(--title-color-primary);
     font-size: var(--font-medium);
-    font-family: var(--title-family);
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -59,7 +57,6 @@ export default css`
     overflow: hidden;
     color: var(--title-color-primary);
     font-size: var(--font-small);
-    font-family: var(--title-family);
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -81,11 +78,11 @@ export default css`
     font-size: var(--font-mini);
     line-height: 32px;
     white-space: nowrap;
-    text-transform: uppercase;
     text-overflow: ellipsis;
 
     &:hover {
       color: var(--color-blue-dark);
+      text-decoration: none;
     }
   }
 `;

@@ -15,7 +15,7 @@ import Card from '../../components/Card';
 
 import { NavItem, BtnAdd, LinkArchive, Header, Title } from './styles';
 
-export default function Landing() {
+export default function AddAviso() {
   return (
     <>
       <Container>

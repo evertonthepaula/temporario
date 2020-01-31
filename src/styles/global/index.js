@@ -10,4 +10,9 @@ export default createGlobalStyle`
   ${settings}
   ${normalize}
   ${typography}
+
+  body{
+    background-color: var(--color-snow);
+    background-color: #E05474;
+  }
 `;

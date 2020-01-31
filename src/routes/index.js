@@ -9,6 +9,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Profile from '../pages/Profile';
 import Landing from '../pages/Landing';
+import AddAviso from '../pages/addAviso';
 
 export default () => (
   <Router history={history}>
@@ -18,6 +19,7 @@ export default () => (
       <Route path="/perfil" component={Profile} isPrivate />
       <Route path="/signup" component={SignUp} />
       <Route path="/Landing" component={Landing} />
+      <Route path="/addAviso" component={AddAviso} />
 
       <Route path="/" component={() => <p>404</p>} />
     </Switch>

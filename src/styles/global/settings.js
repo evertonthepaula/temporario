@@ -45,7 +45,8 @@ export default css`
     --brand-color-red: #ed1c24;
     --brand-color-blue: #26247b;
     --brand-color-blue-light: #0071bb;
-    --brand-color-blue-dark: #002a68;
+    --brand-color-blue-dark: #062246;
+    --brand-color-pink:#E05474
 
     --title-family: 'PT Sans Caption', sans-serif;
     --text-family: 'PT Sans', sans-serif;
@@ -71,7 +72,7 @@ export default css`
     --font-nano: 1rem;
     --font-micro: 1.2rem;
     --font-mini: 1.4rem;
-    --font-tiny: 1.6rem;
+    --font-normal: 1.6rem;
     --font-small: 1.8rem;
     --font-medium: 2.1rem;
     --font-large: 2.4rem;
