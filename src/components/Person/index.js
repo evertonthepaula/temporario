@@ -34,8 +34,8 @@ Person.propTypes = {
     email: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
-    avatar: PropTypes.string
-  })
+    avatar: PropTypes.string,
+  }),
 };
 
 Person.defaultProps = {
@@ -44,8 +44,8 @@ Person.defaultProps = {
     email: '',
     first_name: '',
     last_name: '',
-    avatar: ''
-  }
+    avatar: '',
+  },
 };
 
 export default memo(Person);

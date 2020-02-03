@@ -1,15 +1,24 @@
-import React from 'react';
+import React from './node_modules/~/pages/AddAviso/node_modules/react';
 
 import {
   FaSchool,
   FaRegPaperPlane,
   FaPlusCircle,
-  FaArchive
-} from 'react-icons/fa';
-import { MdNotificationsNone } from 'react-icons/md';
-import { FiHome, FiCalendar, FiUser, FiBook } from 'react-icons/fi';
+  FaArchive,
+} from './node_modules/~/pages/AddAviso/node_modules/react-icons/fa';
+import { MdNotificationsNone } from './node_modules/~/pages/AddAviso/node_modules/react-icons/md';
+import {
+  FiHome,
+  FiCalendar,
+  FiUser,
+  FiBook,
+} from './node_modules/~/pages/AddAviso/node_modules/react-icons/fi';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import {
+  Container,
+  Row,
+  Col,
+} from './node_modules/~/pages/AddAviso/node_modules/react-bootstrap';
 
 import Card from '../../components/Card';
 

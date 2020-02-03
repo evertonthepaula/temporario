@@ -47,12 +47,12 @@ function SpeedOptions({ oncChangeSpeed, currentValue }) {
 
 SpeedOptions.propTypes = {
   oncChangeSpeed: PropTypes.func,
-  currentValue: PropTypes.number
+  currentValue: PropTypes.number,
 };
 
 SpeedOptions.defaultProps = {
   oncChangeSpeed: () => {},
-  currentValue: 1
+  currentValue: 1,
 };
 
 export default memo(SpeedOptions);

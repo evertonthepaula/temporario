@@ -40,5 +40,5 @@ export const Option = styled.span`
 `;
 export default {
   Option,
-  ListOptions
+  ListOptions,
 };

@@ -14,7 +14,7 @@ import {
   Info,
   Owner,
   Btn,
-  ActionsBtn
+  ActionsBtn,
 } from './styles';
 
 function Card({ cover, tag, title, info, owner }) {

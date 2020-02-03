@@ -1,27 +1,22 @@
 import React from 'react';
-import { Router, Switch } from 'react-router-dom';
-
+import { Switch } from 'react-router-dom';
 import Route from './Route';
-import history from '../services/history';
 
-import Dashboard from '../pages/Dashboard';
-import SignIn from '../pages/SignIn';
-import SignUp from '../pages/SignUp';
-import Profile from '../pages/Profile';
-import Landing from '../pages/Landing';
-import AddAviso from '../pages/addAviso';
+import SignIn from '~/pages/SignIn';
+import Home from '~/pages/Home';
+import NotificationsAdd from '~/pages/Notifications/add.js';
+import HelpOrders from '~/pages/HelpOrders';
 
-export default () => (
-  <Router history={history}>
+export default function Routes() {
+  return (
     <Switch>
-      <Route path="/" component={SignIn} exact />
-      <Route path="/dashboard" component={Dashboard} isPrivate />
-      <Route path="/perfil" component={Profile} isPrivate />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/Landing" component={Landing} />
-      <Route path="/addAviso" component={AddAviso} />
+      <Route path="/" exact component={SignIn} />
 
-      <Route path="/" component={() => <p>404</p>} />
+      <Route path="/home" component={Home} isPrivate />
+
+      <Route path="/notifications/add" component={NotificationsAdd} isPrivate />
+
+      <Route path="/" component={() => <h1>404</h1>} />
     </Switch>
-  </Router>
-);
+  );
+}

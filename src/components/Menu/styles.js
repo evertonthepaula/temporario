@@ -34,5 +34,5 @@ export const Icon = styled.span`
 
 export default {
   LinkItem,
-  Icon
+  Icon,
 };

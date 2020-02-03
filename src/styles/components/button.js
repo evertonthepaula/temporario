@@ -81,11 +81,11 @@ const colors = {
     &:focus {
       outline: solid 1px var(--color-blue-dark);
     }
-  `
+  `,
 };
 
 const Button = styled.button.attrs({
-  type: 'button'
+  type: 'button',
 })`
   display: inline-flex;
   align-items: center;

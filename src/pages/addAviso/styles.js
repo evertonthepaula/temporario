@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from './node_modules/~/pages/AddAviso/node_modules/styled-components';
 
-import { Link } from 'react-router-dom';
+import { Link } from './node_modules/~/pages/AddAviso/node_modules/react-router-dom';
 import Button from '../../styles/components/button';
 
 export const Header = styled.header`
@@ -98,5 +98,5 @@ export const LinkArchive = styled(Link)`
 export default {
   NavItem,
   LinkArchive,
-  BtnAdd
+  BtnAdd,
 };

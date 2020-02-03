@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Video = styled.video.attrs({
   preload: 'metadata',
-  controlsList: 'nodownload'
+  controlsList: 'nodownload',
 })`
   display: flex;
   width: 100%;
@@ -20,7 +20,7 @@ export const Controls = styled.div`
 `;
 
 export const Btn = styled.button.attrs({
-  type: 'button'
+  type: 'button',
 })`
   display: inline-flex;
   align-items: center;
@@ -50,7 +50,7 @@ export const Btn = styled.button.attrs({
 
 export const InputRange = styled.input.attrs({
   type: 'range',
-  step: '0.1'
+  step: '0.1',
 })`
   width: 100%;
   position: relative;
@@ -200,5 +200,5 @@ export default {
   Btn,
   Video,
   Controls,
-  InputRange
+  InputRange,
 };

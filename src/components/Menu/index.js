@@ -19,7 +19,7 @@ function MainMenu({ itens }, ...props) {
 }
 
 MainMenu.propTypes = {
-  itens: PropTypes.array
+  itens: PropTypes.array,
 };
 
 MainMenu.defaultProps = {
@@ -27,39 +27,39 @@ MainMenu.defaultProps = {
     {
       name: 'Home',
       path: 'home',
-      icon: <FiHome />
+      icon: <FiHome />,
     },
     {
       name: 'Dashboard',
       path: 'dashboard',
-      icon: <FiHome />
+      icon: <FiHome />,
     },
     {
       name: 'Landing',
       path: 'landing',
-      icon: <FiHome />
+      icon: <FiHome />,
     },
     {
       name: 'Escola',
       path: 'escola',
-      icon: <FaSchool />
+      icon: <FaSchool />,
     },
     {
       name: 'Calendario',
       path: 'calendario',
-      icon: <FiCalendar />
+      icon: <FiCalendar />,
     },
     {
       name: 'Biblioteca',
       path: 'biblioteca',
-      icon: <FiBook />
+      icon: <FiBook />,
     },
     {
       name: 'Perfil',
       path: 'perfil',
-      icon: <FiUser />
-    }
-  ]
+      icon: <FiUser />,
+    },
+  ],
 };
 
 export default MainMenu;

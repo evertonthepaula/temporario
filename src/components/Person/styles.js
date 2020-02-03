@@ -41,5 +41,5 @@ export const Info = styled.span`
 
 export default {
   Card,
-  Info
+  Info,
 };
