@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Service from './service';
 import Person from '../../components/Person';
 
-function People({ title }) {
+function People({ title }, ...props) {
+
   const [people, setPeople] = useState([]);
 
   useEffect(() => Service.getPeople(setPeople), []);
