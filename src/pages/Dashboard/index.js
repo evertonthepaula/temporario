@@ -7,6 +7,7 @@ import Person from '../../components/Person';
 import People from '../../features/People';
 import Button from '../../styles/components/button';
 import Video from '../../components/Video/player';
+import ImageUpload from '../../components/ImageUpload';
 
 export default function Dashboard() {
   const [person, setPerson] = useState();
@@ -17,6 +18,15 @@ export default function Dashboard() {
     <>
       <Container>
         <h1>Template para projetos React</h1>
+
+
+
+
+<hr/>
+
+<ImageUpload/>
+
+<hr/>
 
         <Row>
           <Col>
